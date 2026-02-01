@@ -2,33 +2,36 @@
     --primary-color: #003366; 
     --accent-color: #00a8e8;  
     --bg-light: #f8f9fa;
+    --text-dark: #333;
 }
 
-/* 修改 style.css 中的 body 部分 */
-/* 修改 style.css 中的 body 部分 */
+/* 全局基础样式 */
 body {
-    /* 顺序：英文字体在前，中文字体在后 */
     font-size: 18px;
+    /* 英文字体优先使用 Cambria，中文字体优先使用华文中宋 */
     font-family: 'Cambria', 'Georgia', 'Times New Roman', 
                  'STZhongsong', '华文中宋', 'SimSun', '宋体', serif;
-    
     margin: 0;
     display: flex;
+    min-height: 100vh;
     background-color: var(--bg-light);
     color: var(--text-dark);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
 
-/* 侧边栏固定在左侧 */
+/* ---------------- 侧边栏样式 ---------------- */
 .sidebar {
-    width: 300px;
+    width: 320px;
     height: 100vh;
-    background: white;
-    position: fixed;
-    padding: 60px 30px;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+    background: #ffffff;
+    position: fixed; /* 电脑端固定在左侧 */
+    padding: 50px 35px;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.03);
     text-align: center;
+    border-right: 1px solid #f0f0f0;
+    box-sizing: border-box;
+    z-index: 100;
 }
 
 .avatar {
@@ -39,46 +42,16 @@ body {
     margin-bottom: 20px;
     border: 3px solid #eee;
 }
-/* 侧边栏整体提升 */
-.sidebar {
-    width: 320px;
-    height: 100vh;
-    background: #ffffff;
-    position: fixed;
-    padding: 50px 35px;
-    box-shadow: 4px 0 20px rgba(0,0,0,0.03);
-    text-align: center;
-    border-right: 1px solid #f0f0f0;
-}
 
-/* 名字排版：中英结合 */
 .name-zh {
     font-family: 'STZhongsong', '华文中宋', serif;
     font-size: 1.8rem;
     color: var(--primary-color);
-    margin: 10px 0 10px 0; /* 保持您之前的间距设置 */
+    margin: 10px 0;
     letter-spacing: 2px;
-    font-weight: bold; /* 华文中宋的粗体非常有学术威严感 */
+    font-weight: bold;
 }
 
-/* 确保侧边栏的机构信息也使用华文中宋 */
-.affiliation {
-    font-family: 'STZhongsong', '华文中宋', serif;
-    font-size: 0.9rem;
-    color: #555;
-    line-height: 1.6;
-}
-
-.name-en {
-    font-size: 1.1rem;
-    color: #7f8c8d;
-    font-weight: 400;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* 学术标签 */
 .title-badge {
     font-family: 'STZhongsong', '华文中宋', serif;
     display: inline-block;
@@ -87,23 +60,20 @@ body {
     color: white;
     font-size: 16px;
     border-radius: 2px;
-    margin-bottom: 5px;
-    font-weight: 300;
+    margin-bottom: 15px;
 }
 
-/* 机构信息 */
 .affiliation {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #555;
     line-height: 1.6;
     margin-bottom: 30px;
     padding: 15px 0;
-    font-size: 17px;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
 }
 
-/* 联系方式：高级感交互 */
+/* 联系方式交互 */
 .contact-links {
     list-style: none;
     padding: 0;
@@ -113,266 +83,263 @@ body {
 .contact-item {
     display: flex;
     align-items: center;
-    padding: 5px 12px;
+    padding: 8px 12px;
     margin-bottom: 8px;
     text-decoration: none;
     color: #444;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     border-radius: 6px;
     transition: all 0.2s ease;
-    border: 1px solid transparent;
 }
 
 .contact-item:hover {
     background-color: #f9fbfd;
-    border-color: var(--accent-color);
     color: var(--accent-color);
     transform: translateX(5px);
 }
 
-.contact-item .icon {
-    margin-right: 12px;
-    font-size: 1.1rem;
-    opacity: 0.8;
-}
-
 .contact-item .text {
     font-family: "Times New Roman", Times, serif;
-    word-break: break-all; /* 防止长邮箱溢出 */
-    font-size: 0.95rem; /* Times New Roman 视觉上较小，可以稍微调大一点点 */
-    letter-spacing: 0.2px; /* 增加一点点字间距，更显高级 */
-}
-
-#copy-email {
-    position: relative; /* 为提示气泡定位 */
+    word-break: break-all;
 }
 
 #copy-tooltip {
     visibility: hidden;
-    width: 60px;
-    background-color: #333;
+    background: #333;
     color: #fff;
-    text-align: center;
+    padding: 5px 10px;
     border-radius: 4px;
-    padding: 5px 0;
     position: absolute;
-    z-index: 1;
-    bottom: 125%; /* 显示在上方 */
+    bottom: 100%;
     left: 50%;
-    margin-left: -30px;
-    opacity: 0;
-    transition: opacity 0.3s;
+    transform: translateX(-50%);
     font-size: 0.7rem;
-    font-family: 'Inter', sans-serif;
+    opacity: 0;
+    transition: 0.3s;
 }
 
-/* 当提示显示时的样式 */
 #copy-tooltip.show {
     visibility: visible;
     opacity: 1;
 }
-/******************************************** 右侧内容 ************************************************/
-/* 右侧内容区滚动 */
+
+/* ---------------- 右侧主内容区 ---------------- */
 .main-content {
-    margin-left: 320px;    /* 必须大于侧边栏宽度，确保内容不被覆盖 */
-    padding: 30px 5%;     /* 上下 80px，左右使用百分比(10%)，能随屏幕宽度自动伸缩 */
-    max-width: 1200px;     /* 限制最大宽度，防止内容在超宽屏上拉得太开导致阅读困难 */
-    flex-grow: 1;          /* 占据剩余空间 */
-    background-color: var(--bg-light);
+    margin-left: 320px; /* 避开固定侧边栏 */
+    padding: 60px 5%;
+    max-width: 1200px;
+    flex-grow: 1;
 }
-#about p {
-    /* 将上下边距改小，例如从默认的 16px 改为 5px */
-    /* 顺序为：上、左右、下 */
-    margin: 2px 0; 
+
+#comments {
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid #eee;
 }
-section { margin-bottom: 5px; }
+
+/* 针对手机端的优化 */
+@media (max-width: 768px) {
+    #comments {
+        padding: 0 10px;
+    }
+}
+
+section { 
+    margin-bottom: 20px; 
+}
 
 h2 {
     border-left: 5px solid var(--accent-color);
     padding-left: 15px;
     color: var(--primary-color);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
 }
 
-/* 折叠卡片样式 */
-.research-container { display: flex; flex-direction: column; gap: 10px; }
+#about p {
+    margin: 5px 0; /* 减小研究方向的段落间距 */
+}
+
+/* ---------------- 代表性研究 (卡片) ---------------- */
+.research-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
 details {
-    background: rgb(245, 245, 245);
-    border: 3px solid #044f8b;
+    background: #fff;
+    border: 1px solid #e0e0e0;
     border-radius: 10px;
-    transition: 0.3s;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
 }
 
-/* 修改 summary 的布局 */
+details[open] {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
 summary {
-    padding: 10px 20px;
-    min-height: 10px;
+    padding: 10px 10px;
+    background: #fdfdfd;
     font-weight: bold;
     cursor: pointer;
     color: var(--primary-color);
     font-size: 1.2rem;
-    
-    display: flex;             /* 开启弹性布局 */
-    justify-content: space-between; /* 标题居左，标签居右 */
-    align-items: center;       /* 垂直居中 */
-    list-style: none;          /* 隐藏浏览器默认箭头 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
 }
 
-/* 针对 Safari 浏览器的默认箭头隐藏 */
-summary::-webkit-details-marker {
-    display: none;
-}
+summary::-webkit-details-marker { display: none; }
 
-/* 调整右侧 Tag 的样式，使其在标题栏更精致 */
-summary .tag {
-    background: #e1f5fe;
-    color: #01579b;
-    padding: 2px 10px;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: normal;
-    margin-left: 15px;         /* 与文字保持间距 */
-    flex-shrink: 0;            /* 防止标签被压缩 */
-    font-family: 'Cambria', sans-serif; /* 英文标签使用 Cambria 更专业 */
-}
-
-/* 如果你还想要那个展开/收起的指示符，可以用伪元素加在文字后面，或者直接取消 summary::after */
 summary::before {
     content: "▶";
-    font-size: 0.9rem;
-    margin-right: 10px;
-    color: var(--accent-color);
-    transition: transform 0.3s;
+    font-size: 0.8rem;
+    margin-right: 12px;
+    transition: 0.3s;
 }
 
 details[open] summary::before {
     transform: rotate(90deg);
 }
 
-.details-content {
-    background: rgb(255, 255, 255);
-    padding: 0 20px 5px;
-    border-top: 2px solid #eee;
-    padding-top: 0px;
+summary .tag {
+    background: #e1f5fe;
+    color: #01579b;
+    padding: 3px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: normal;
 }
 
-/* 论文引用部分：设置较小字体 */
+.details-content {
+    padding: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* 左文右图布局 */
+.card-inner {
+    display: flex;
+    gap: 25px;
+}
+
+.card-text {
+    flex: 4;
+}
+
+.card-image {
+    flex: 1;
+    min-width: 150px;
+}
+
+.card-image img {
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 论文引用列表 */
 .pub-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin-top: 15px;
 }
 
 .pub-list li {
-    line-height: 1.5;
-    margin-bottom: 5px;
+    font-size: 0.9rem; /* 论文引用字体稍小 */
     color: #555;
+    margin-bottom: 10px;
     padding-left: 15px;
     position: relative;
-    font-family: 'Times New Roman', 'STZhongsong', serif; /* 论文引用使用更标准的衬线体 */
-    font-size: 15px;
+    line-height: 1.5;
 }
 
 .pub-list li::before {
     content: "•";
-    color:#000
     color: var(--accent-color);
     position: absolute;
     left: 0;
 }
 
-/* 论文点击跳转链接样式 */
 .pub-list a {
     color: var(--primary-color);
     text-decoration: none;
-    font-weight: 500;
 }
 
 .pub-list a:hover {
-    color: var(--accent-color);
     text-decoration: underline;
 }
 
-/* 强调作者本人 */
-.pub-list strong {
-    color: #000;
-    text-decoration: underline; /* 国际简历常用：下划线标出本人 */
-}
-
-/* 保持之前的图片容器比例 */
-.card-inner {
-    display: flex;
-    gap: 10px;
-}
-
-.card-text {
-    flex: 5; /* 文字占 80% */
-}
-
-.card-image {
-    margin-top: 10px;
-    flex: 3; /* 图片占 20% */
-    min-width: 120px;
-}
-
-.card-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-}
-/* 响应式微调：如果是手机查看，自动变成上下堆叠 */
-@media (max-width: 600px) {
-    .card-inner {
-        flex-direction: column;
-    }
-    .card-image {
-        width: 100%;
-        margin-top: 15px;
-    }
-}
-
-/* 时间轴容器 */
-.timeline {
-    position: relative;
-    padding: 10px 0;
-}
-
-/* 时间轴中的每一项 */
+/* ---------------- 教育背景 (时间轴) ---------------- */
 .timeline-item {
     display: flex;
-    margin-bottom: 10px; /* 每段经历之间的距离 */
-    position: relative;
+    margin-bottom: 15px;
 }
 
-/* 左侧日期部分 */
 .timeline-date {
-    width: 100px; /* 根据日期宽度微调 */
+    width: 100px;
     text-align: right;
     padding-right: 20px;
-    font-family: 'Cambria', serif; /* 保持您喜欢的 Cambria 字体 */
     font-size: 0.95rem;
-    color: #333;
-    line-height: 1.4;
+    color: #666;
     flex-shrink: 0;
 }
 
-/* 右侧正文部分 */
 .timeline-content {
-    font-family: 'Cambria', 'STZhongsong', '华文中宋', serif;
     padding-left: 20px;
-    border-left: 2px solid #000; /* 图片中的那条黑竖线 */
-    font-family: 'Cambria', 'PingFang SC', serif;
-    font-size: 1rem;
-    line-height: 1.6;
+    border-left: 2px solid var(--primary-color);
+    flex-grow: 1;
 }
 
-.timeline-content strong {
-    font-size: 1.1rem;
-    color: var(--primary-color);
-}
+/* ---------------- 响应式设计 (手机端优化) ---------------- */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
 
-/* 最后一个项目去掉边框的延伸感（可选） */
-.timeline-item:last-child {
-    margin-bottom: 0;
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative; /* 手机端取消固定 */
+        padding: 40px 20px;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 30px 20px;
+    }
+
+    .card-inner {
+        flex-direction: column; /* 手机端改为上下布局 */
+    }
+
+    .card-image {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    summary {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    summary .tag {
+        margin-left: 0;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+    }
+
+    .timeline-date {
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 5px;
+    }
 }
