@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600&display=swap");
 :root {
-    --navy: #2F5496;
-    --blue: #315e78;
-    --blue-soft: #edf1f2;
-    --ink: #26333a;
-    --muted: #667178;
-    --line: #d4dade;
-    --page: #edf1f7;
+    --navy: #173b63;
+    --blue: #2b6fad;
+    --blue-soft: #edf5fc;
+    --ink: #101820;
+    --muted: #51677d;
+    --line: #d5e3ef;
+    --page: #f6f9fd;
     --white: #fff;
     --sidebar-width: 286px;
 }
@@ -44,8 +44,8 @@ a {
     height: 100vh;
     padding: 32px 28px 24px;
     overflow-y: auto;
-    border-right: 1px solid #cbd2d6;
-    background: #fbfcfc;
+    border-right: 1px solid var(--line);
+    background: #ffffff;
 }
 
 .profile {
@@ -58,7 +58,7 @@ a {
     margin: 0 auto 15px;
     border: 4px solid var(--white);
     border-radius: 50%;
-    box-shadow: 0 0 0 1px var(--line);
+    box-shadow: 0 0 0 1px #b7cee2;
     object-fit: cover;
 }
 
@@ -95,7 +95,7 @@ a {
 
 .bio {
     margin: 13px 0 0;
-    color: #5e7381;
+    color: var(--ink);
     font-size: 0.78rem;
     text-align: left;
 }
@@ -112,7 +112,7 @@ a {
     align-items: center;
     padding: 8px 2px;
     border-bottom: 1px solid var(--line);
-    color: #43535f;
+    color: var(--navy);
     font-size: 0.76rem;
     font-weight: 600;
     text-decoration: none;
@@ -141,10 +141,10 @@ a {
     gap: 10px;
     width: 100%;
     padding: 7px 9px;
-    border: 0;
+    border: 1px solid transparent;
     border-radius: 1px;
-    background: var(--page);
-    color: #465660;
+    background: var(--blue-soft);
+    color: var(--navy);
     cursor: pointer;
     font-family: "Times New Roman", serif;
     font-size: 0.67rem;
@@ -158,7 +158,8 @@ a {
 
 .contact-list a:hover,
 .contact-list button:hover {
-    background: var(--blue-soft);
+    border-color: #bad2e6;
+    background: #ffffff;
     color: var(--blue);
 }
 
@@ -175,7 +176,7 @@ a {
 .motto {
     margin: auto 0 0;
     padding-top: 18px;
-    color: #8b969e;
+    color: #6e87a0;
     font-family: Georgia, serif;
     font-size: 0.7rem;
     font-style: italic;
@@ -229,8 +230,8 @@ a {
 
 .about {
     padding: 13px 18px;
-    border: 1px solid #aeb9c0;
-    background: rgba(255, 255, 255, 1);
+    border: 1px solid #bfd5e7;
+    background: #ffffff;
 }
 
 .about-content p {
@@ -256,7 +257,7 @@ a {
 .keywords span,
 .tag {
     padding: 2px 0;
-    border-bottom: 1px solid #aab8c0;
+    border-bottom: 1px solid #99b9d5;
     border-radius: 0;
     background: transparent;
     color: var(--blue);
@@ -278,13 +279,13 @@ a {
     border: 1px solid var(--line);
     border-radius: 1px;
     background: var(--white);
-    box-shadow: 0 2px 8px rgba(21, 43, 58, 0.025);
+    box-shadow: 0 2px 10px rgba(23, 59, 99, 0.035);
 }
 
 .research-image {
     min-height: 100%;
     padding: 14px;
-    border-right: 2px solid var(--line);
+    border-right: 1px solid var(--line);
     background: #ffffff;
 }
 
@@ -336,7 +337,7 @@ a {
     gap: 3px;
     margin: 0;
     padding: 8px 0 0;
-    border-top: 1px solid #e6ebee;
+    border-top: 1px solid var(--line);
     list-style: none;
 }
 
@@ -386,8 +387,8 @@ a {
 
 .education {
     padding: 8px 18px;
-    border: 1px solid #aeb9c0;
-    background: rgba(255, 255, 255, 1);
+    border: 1px solid #bfd5e7;
+    background: #ffffff;
 }
 
 .education-list {
@@ -401,7 +402,7 @@ a {
     grid-template-columns: minmax(0, 1fr) 150px;
     gap: 18px;
     padding: 6px 0;
-    border-bottom: 1px solid #e3e7e9;
+    border-bottom: 1px solid var(--line);
 }
 
 .education-list article:last-child {
@@ -460,7 +461,7 @@ footer {
     justify-content: space-between;
     padding-top: 12px;
     border-top: 1px solid var(--line);
-    color: #8b969e;
+    color: #6e87a0;
     font-size: 0.62rem;
 }
 
