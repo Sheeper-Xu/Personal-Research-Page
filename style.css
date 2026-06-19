@@ -6,7 +6,7 @@
     --ink: #26333a;
     --muted: #667178;
     --line: #d4dade;
-    --page: #f1f3f3;
+    --page: #edf1f7;
     --white: #fff;
     --sidebar-width: 286px;
 }
@@ -230,7 +230,7 @@ a {
 .about {
     padding: 13px 18px;
     border: 1px solid #aeb9c0;
-    background: rgba(255, 255, 255, 0.48);
+    background: rgba(255, 255, 255, 1);
 }
 
 .about-content p {
@@ -387,7 +387,7 @@ a {
 .education {
     padding: 8px 18px;
     border: 1px solid #aeb9c0;
-    background: rgba(255, 255, 255, 0.48);
+    background: rgba(255, 255, 255, 1);
 }
 
 .education-list {
