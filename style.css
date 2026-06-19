@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600&display=swap");
-
 :root {
-    --navy: #152b3a;
+    --navy: #2F5496;
     --blue: #315e78;
     --blue-soft: #edf1f2;
     --ink: #26333a;
@@ -229,12 +228,22 @@ a {
 }
 
 .about {
-    padding: 0 0 2px 0;
+    padding: 13px 18px;
+    border: 1px solid #aeb9c0;
+    background: rgba(255, 255, 255, 0.48);
 }
 
 .about-content p {
     margin: 0;
     color: #000;
+}
+
+.about-content p + p {
+    margin-top: 4px;
+}
+
+.about-content strong {
+    color: var(--blue);
 }
 
 .keywords {
@@ -309,7 +318,7 @@ a {
 
 .research-body h3 {
     margin: 0;
-    color: var(--navy);
+    color: var(--blue);
     font-family: Garamond, "EB Garamond", "Noto Serif SC", serif;
     font-size: 1.02rem;
     font-weight: 600;
@@ -376,7 +385,9 @@ a {
 }
 
 .education {
-    padding: 0;
+    padding: 8px 18px;
+    border: 1px solid #aeb9c0;
+    background: rgba(255, 255, 255, 0.48);
 }
 
 .education-list {
@@ -401,7 +412,7 @@ a {
     grid-column: 2;
     grid-row: 1;
     color: #000;
-    font-size: 0.9rem;
+    font-size: 0.78rem;
     font-weight: 700;
     text-align: right;
 }
@@ -424,7 +435,7 @@ a {
 }
 
 .education-list strong {
-    color: var(--navy);
+    color: var(--blue);
 }
 
 .education-list span {
