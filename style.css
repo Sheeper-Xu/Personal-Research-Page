@@ -6,9 +6,9 @@
     --ink: #101820;
     --muted: #51677d;
     --line: #d5e3ef;
-    --page: #f6f9fd;
+    --page: #fafafa;
     --white: #fff;
-    --sidebar-width: 286px;
+    --sidebar-width: 310px;
 }
 
 * {
@@ -329,7 +329,8 @@ a {
 .research-description {
     margin: 7px 0 9px;
     color: #000;
-    font-size: 0.76rem;
+    font-size: 0.86rem;
+    line-height: 1.5;
 }
 
 .publication-list {
@@ -343,8 +344,8 @@ a {
 
 .publication-list li {
     display: grid;
-    grid-template-columns: 41px minmax(0, 1fr);
-    gap: 7px;
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 4px;
     align-items: baseline;
 }
 
