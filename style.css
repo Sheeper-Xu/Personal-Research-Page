@@ -409,11 +409,13 @@ a {
 .education-list article > div {
     grid-column: 1;
     grid-row: 1;
+    text-align: left;
 }
 
 .education-list p {
     margin: 0;
     font-size: 0.86rem;
+    text-align: left;
 }
 
 .education-list strong,
@@ -548,7 +550,14 @@ footer {
     }
 
     .education-list time {
+        grid-column: auto;
+        grid-row: auto;
         text-align: left;
+    }
+
+    .education-list article > div {
+        grid-column: auto;
+        grid-row: auto;
     }
 }
 
