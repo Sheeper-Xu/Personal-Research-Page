@@ -398,15 +398,22 @@ a {
 }
 
 .education-list time {
+    grid-column: 2;
+    grid-row: 1;
     color: #000;
-    font-size: 0.82rem;
+    font-size: 0.9rem;
     font-weight: 700;
     text-align: right;
 }
 
+.education-list article > div {
+    grid-column: 1;
+    grid-row: 1;
+}
+
 .education-list p {
     margin: 0;
-    font-size: 0.76rem;
+    font-size: 0.86rem;
 }
 
 .education-list strong,
@@ -421,7 +428,7 @@ a {
 .education-list span {
     margin-top: 2px;
     color: #000;
-    font-size: 0.68rem;
+    font-size: 0.78rem;
 }
 
 .education-list .thesis {
@@ -532,6 +539,16 @@ footer {
 
     .education-list {
         grid-template-columns: 1fr;
+    }
+
+    .education-list article {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .education-list time {
+        text-align: left;
     }
 }
 
