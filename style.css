@@ -457,6 +457,103 @@ a {
     font-size: 0.75rem;
 }
 
+.engineering-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.engineering-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 15px 17px 14px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(23, 59, 99, 0.035);
+}
+
+.engineering-card header {
+    min-height: 68px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--line);
+}
+
+.engineering-card h3 {
+    margin: 0;
+    color: var(--blue);
+    font-family: Garamond, "EB Garamond", "Noto Serif SC", serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.engineering-card time {
+    display: block;
+    margin-top: 3px;
+    color: var(--navy);
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.engineering-card > p {
+    margin: 10px 0;
+    color: #000;
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.engineering-card dl {
+    display: grid;
+    gap: 3px;
+    margin: auto 0 0;
+}
+
+.engineering-card dl div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 3px;
+    border-top: 1px solid var(--line);
+}
+
+.engineering-card dt,
+.engineering-card dd,
+.engineering-card li {
+    font-size: 0.76rem;
+}
+
+.engineering-card dt {
+    color: var(--muted);
+}
+
+.engineering-card dd {
+    margin: 0;
+    color: #000;
+    font-weight: 700;
+    text-align: right;
+}
+
+.engineering-card ul {
+    display: grid;
+    gap: 3px;
+    margin: auto 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.engineering-card li {
+    padding-top: 3px;
+    border-top: 1px solid var(--line);
+    color: #000;
+}
+
+.engineering-card li::before {
+    margin-right: 7px;
+    color: var(--blue);
+    content: "—";
+}
+
 footer {
     display: flex;
     justify-content: space-between;
@@ -469,6 +566,14 @@ footer {
 @media (max-width: 1050px) {
     .research-card {
         grid-template-columns: minmax(220px, 32%) minmax(0, 1fr);
+    }
+
+    .engineering-list {
+        grid-template-columns: 1fr;
+    }
+
+    .engineering-card header {
+        min-height: 0;
     }
 }
 
