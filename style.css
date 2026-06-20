@@ -173,6 +173,24 @@ a {
     text-transform: uppercase;
 }
 
+.language-switch {
+    display: block;
+    margin-top: 13px;
+    padding: 7px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    color: var(--blue);
+    font-family: Garamond, "EB Garamond", serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+}
+
+.language-switch:hover {
+    color: var(--navy);
+}
+
 .motto {
     margin: auto 0 0;
     padding-top: 18px;
@@ -624,6 +642,10 @@ footer {
     .contact-list {
         grid-template-columns: repeat(3, 1fr);
         margin-top: 14px;
+    }
+
+    .language-switch {
+        margin-top: 10px;
     }
 
     .contact-list a,
